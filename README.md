@@ -1,11 +1,11 @@
-![SS](/Other/df.png)
+## :snowflake: :hibiscus: Aether Desktop
 
 <img alt="Visits" src="https://badges.pufler.dev/visits/ilham25/dotfiles-aether?style=flat-square&label=&color=success&logo=GitHub&logoColor=white&labelColor=373e4d"/>
 <img alt="Repo Size" align="right" src="https://github-size-badge.herokuapp.com/ilham25/dotfiles-aether.svg"/>
 
 ## :art: Screenshot
 
-> :link: **All Theme** > ![SS](/Other/dot.gif)
+![SS](/Other/dot.gif)
 
 ## :snowflake: My Setup :snowflake:
 
@@ -115,16 +115,6 @@ yay -S dunst tint2 gsimplecal rofi feh lxappearance qt5ct qt5-styleplugins lxses
 ```bash
 fc-cache -rv
 ```
-
-## :clap: How to change theme
-
-> **Run this command and choose the theme index**
-
-```bash
-cht
-```
-
-![SS](/Other/cht.png)
 
 ## :black_square_button: Keybinds
 
