@@ -1,0 +1,1 @@
+dm-tool lock

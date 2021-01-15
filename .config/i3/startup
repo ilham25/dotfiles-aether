@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+theme="$(cat ~/.config/i3/theme/now)"
+
+aestheticLight() {
+    # Dunst
+    dunst -config ~/.config/dunst/dunstrc-left &
+    # Wallpaper
+    feh --bg-fill ~/.wallpaper/aes-light-2.png
+    # GTK, rofi, color theme
+    ~/.config/i3/theme/aesthetic-light/aesthetic-light-theme
+    # Panel
+    tint2 -c ~/.config/tint2/aesthetic-i3-light.tint2rc &
+    # Terminal Color Scheme
+    xrdb ~/.config/i3/theme/aesthetic-light/.Xresources
+}
+aestheticDark() {
+    # Dunst
+    dunst -config ~/.config/dunst/dunstrc-dark-left &
+    # Wallpaper
+    feh --bg-fill ~/.wallpaper/aes-dark-2.png
+    # GTK, rofi, color theme
+    ~/.config/i3/theme/aesthetic-dark/aesthetic-dark-theme
+    # Panel
+    tint2 -c ~/.config/tint2/aesthetic-i3-dark.tint2rc &
+    # Terminal Color Scheme
+    xrdb ~/.config/i3/theme/aesthetic-dark/.Xresources
+}
+
+"$theme"
+exit
+

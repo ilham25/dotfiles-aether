@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+echo "Change Theme"
+echo "======================="
+echo "1. Aesthetic - Lights"
+echo "2. Aesthetic - Dark"
+echo "======================="
+echo " "
+echo "Choose theme index : "
+read choose
+
+case $choose in
+    1)
+    echo "aestheticLight" > ~/.config/i3/theme/now
+    echo "Theme changed to : Aesthetic - Light"
+    ;;
+    2)
+    echo "aestheticDark" > ~/.config/i3/theme/now
+    echo "Theme changed to : Aesthetic - Dark"
+    ;;
+    *)
+    echo "Input error"
+    ;;
+esac
+
+~/.config/i3/kill-ui &> /dev/null
+~/.config/i3/startup &> /dev/null
