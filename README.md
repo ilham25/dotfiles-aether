@@ -115,6 +115,31 @@ yay -S dunst tint2 gsimplecal rofi feh lxappearance qt5ct qt5-styleplugins lxses
 fc-cache -rv
 ```
 
+## :gear: User Configuration
+
+#### :warning: WiFi connected but panel icon and title doesn't say connected
+
+First, check the name of your wireless card
+
+```bash
+ip a
+```
+
+There you should see something started with **wl** like **wlo1, wlp3s0**. Open panel network executor using geany or another text editor.
+
+```bash
+geany ~/.config/tint2/executor/network
+```
+
+```cfg
+...
+6 intwifi="wlo1" # Change this to your wireless card interface name
+7 intether="enp4s0" # Also for your ethernet
+```
+
+Change **intwifi** value to your wireless card interface, mine is **wlo1**, this also worked to your ethernet, but use **intether**.
+If you are using the right name, then in the panel you should see your wifi SSID and the icon doesn't disable anymore
+
 ## :black_square_button: Keybinds
 
 | Key                                                                         | Action                                  |
@@ -145,3 +170,7 @@ fc-cache -rv
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
 - [Aesthetic Light Wallpaper](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
 - [Aesthetic Dark Wallpaper](http://eskipaper.com/images/winter-freeway-wallpaper-1.jpg)
+
+```
+
+```
