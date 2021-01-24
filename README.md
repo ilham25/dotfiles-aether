@@ -225,8 +225,8 @@ If you are using the right name, then in the panel you should see your wifi SSID
 - [@boreycutts - i3-gaps](https://gist.github.com/boreycutts)
 - [@duangdeong - Dotfiles Tester](https://github.com/duangdeong)
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
-- [Aesthetic Light Wallpaper](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
-- [Aesthetic Dark Wallpaper](http://eskipaper.com/images/winter-freeway-wallpaper-1.jpg)
+- [Aether Light Wallpaper](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
+- [Aether Dark Wallpaper](http://eskipaper.com/images/winter-freeway-wallpaper-1.jpg)
 
 ```
 
