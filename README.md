@@ -18,6 +18,61 @@
 
 ## :wrench: Installation
 
+### :computer: **Debian & Ubuntu (and all based distributions)**
+
+#### i3-Gaps installation use this **[tutorial](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783)**
+
+> **Other Dependencies**
+
+```bash
+sudo apt install rsync python psmisc wireless-tools alsa-utils brightnessctl nitrogen dunst tint2 gsimplecal rofi lxappearance qt5ct qt5-style-plugins lxpolkit xautolock rxvt-unicode xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ffmpegthumbnailer tumbler w3m w3m-img geany viewnior mpv mpd mpc ncmpcpp pavucontrol parcellite neofetch htop imagemagick ffmpeg playerctl xsettingsd
+```
+
+> :diamonds: **oh-my-zsh & plugins**
+
+- ```bash
+  sudo apt install zsh
+  ```
+
+- ```bash
+  chsh -s `which zsh` # Change default shell to zsh for current user
+  ```
+
+- ```bash
+  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  ```
+
+- ```bash
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  ```
+
+- ```bash
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  ```
+
+- [zsh-completions](https://software.opensuse.org/download.html?project=shells%3Azsh-users%3Azsh-completions&package=zsh-completions)
+
+> **Picom**
+
+- ```bash
+  $ sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev
+  ```
+- ```bash
+  $ git clone https://github.com/yshui/picom.git && cd picom/
+  ```
+- ```bash
+  $ git submodule update --init --recursive
+  ```
+- ```bash
+  $ meson --buildtype=release . build
+  ```
+- ```bash
+  $ ninja -C build
+  ```
+- ```bash
+  $ ninja -C build install
+  ```
+
 ### :computer: **Arch Based (Dependencies)**
 
 > :exclamation: For AUR helper, im using **yay**
@@ -167,6 +222,7 @@ If you are using the right name, then in the panel you should see your wifi SSID
 - [i3wm Wiki](https://i3wm.org/docs/userguide.html)
 - [@owl4ce](https://github.com/owl4ce/)
 - [@nwg-piotr - psuinfo](https://github.com/nwg-piotr)
+- [@boreycutts - i3-gaps](https://gist.github.com/boreycutts)
 - [@duangdeong - Dotfiles Tester](https://github.com/duangdeong)
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
 - [Aesthetic Light Wallpaper](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
