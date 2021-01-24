@@ -20,7 +20,9 @@
 
 ### :computer: **Debian & Ubuntu (and all based distributions)**
 
-#### i3-Gaps installation use this **[tutorial](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783)**
+> **i3-Gaps Window Manager**
+
+[Use this tutorial](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783)
 
 > **Other Dependencies**
 
