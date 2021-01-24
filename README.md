@@ -140,7 +140,7 @@ yay -S dunst tint2 gsimplecal rofi feh lxappearance qt5ct qt5-styleplugins lxses
   ```
 
 - ```bash
-  cd dotfiles/ && cp -r {.*,*} ~/
+  cd dotfiles-aether/ && cp -r {.*,*} ~/
   ```
 
 - ```bash
