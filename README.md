@@ -18,7 +18,7 @@
 
 ## :wrench: Installation
 
-- ### :computer: **Debian & Ubuntu (and all based distributions)**
+- ### :computer: **Debian Based**
 
   > **i3-Gaps Window Manager**
 
@@ -75,7 +75,7 @@
     ninja -C build install
     ```
 
-- ### :computer: **Arch Based (Dependencies)**
+- ### :computer: **Arch Based**
 
   > :exclamation: For AUR helper, im using **yay**
 
