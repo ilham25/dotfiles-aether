@@ -174,70 +174,70 @@ fc-cache -rv
 
 ## :gear: User Configuration
 
-#### :warning: WiFi connected but panel icon and title doesn't say connected
+- **:warning: WiFi connected but panel icon and title doesn't say connected**
 
-First, check the name of your wireless card
+  First, check the name of your wireless card
 
-```bash
-ip a
-```
+  ```bash
+  ip a
+  ```
 
-There you should see something started with **wl** like **wlo1, wlp3s0**. Open panel network executor using geany or another text editor.
+  There you should see something started with **wl** like **wlo1, wlp3s0**. Open panel network executor using geany or another text editor.
 
-```bash
-geany ~/.config/tint2/executor/network
-```
+  ```bash
+  geany ~/.config/tint2/executor/network
+  ```
 
-```cfg
-...
-6 intwifi="wlo1" # Change this to your wireless card interface name
-7 intether="enp4s0" # Also for your ethernet
-```
+  ```cfg
+  ...
+  6 intwifi="wlo1" # Change this to your wireless card interface name
+  7 intether="enp4s0" # Also for your ethernet
+  ```
 
-Change **intwifi** value to your wireless card interface, mine is **wlo1**, this also worked to your ethernet, but use **intether**.
-If you are using the right name, then in the panel you should see your wifi SSID and the icon doesn't disable anymore
+  Change **intwifi** value to your wireless card interface, mine is **wlo1**, this also worked to your ethernet, but use **intether**.
+  If you are using the right name, then in the panel you should see your wifi SSID and the icon doesn't disable anymore
 
-#### :city_sunset: Universal Walpaper Config
+- **:city_sunset: Universal Walpaper Config**
 
-If you dont like my default wallpaper or want to change it, follow this steps :
+  If you dont like my default wallpaper or want to change it, follow this steps :
 
-> **Run this command to open my theme config using geany**
+  > **Run this command to open my theme config using geany**
 
-```bash
-geany ~/.config/i3/startup
-```
+  ```bash
+  geany ~/.config/i3/startup
+  ```
 
-> **Insert # in the beginning of line 9 and 21**
+  > **Insert # in the beginning of line 9 and 21**
 
-```cfg
-...
-9 #feh --bg-fill ~/.wallpaper/aes-light-2.png
-...
-21 #feh --bg-fill ~/.wallpaper/aes-dark-2.png
-```
+  ```cfg
+  ...
+  9 #feh --bg-fill ~/.wallpaper/aes-light-2.png
+  ...
+  21 #feh --bg-fill ~/.wallpaper/aes-dark-2.png
+  ```
 
-> **Insert this config to line 29**
+  > **Insert this config to line 29**
 
-```cfg
-...
-29 ~/.fehbg
-```
+  ```cfg
+  ...
+  29 ~/.fehbg
+  ```
 
-> **Save**
+  > **Save**
 
-> **Next, change your wallpaper using this command**
+  > **Next, change your wallpaper using this command**
 
-```bash
-feh --bg-fill PATH_TO_WALLPAPER
-```
+  ```bash
+  feh --bg-fill PATH_TO_WALLPAPER
+  ```
 
-**Example**
+  Example
 
-```bash
-feh --bg-fill ~/Pictures/image.png
-```
+  ```bash
+  feh --bg-fill ~/Pictures/image.png
+  ```
 
-and that's basically done. Thanks for **[@hikanna](https://gitlab.com/hikanna)** for this advice.
+  and that's basically done. Thanks for **[@hikanna](https://gitlab.com/hikanna)** for this advice.
 
 ## :black_square_button: Keybinds
 
