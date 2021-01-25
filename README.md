@@ -197,6 +197,48 @@ geany ~/.config/tint2/executor/network
 Change **intwifi** value to your wireless card interface, mine is **wlo1**, this also worked to your ethernet, but use **intether**.
 If you are using the right name, then in the panel you should see your wifi SSID and the icon doesn't disable anymore
 
+#### :city_sunset: Universal Walpaper Config
+
+If you dont like my default wallpaper or want to change it, follow this steps :
+
+> **Run this command to open my theme config using geany**
+
+```bash
+geany ~/.config/i3/startup
+```
+
+> **Insert # in the beginning of line 9 and 21**
+
+```cfg
+...
+9 #feh --bg-fill ~/.wallpaper/aes-light-2.png
+...
+21 #feh --bg-fill ~/.wallpaper/aes-dark-2.png
+```
+
+> **Insert this config to line 29**
+
+```cfg
+...
+29 ~/.fehbg
+```
+
+> **Save**
+
+> **Next, change your wallpaper using this command**
+
+```bash
+feh --bg-fill PATH_TO_WALLPAPER
+```
+
+**Example**
+
+```bash
+feh --bg-fill ~/Pictures/image.png
+```
+
+and that's basically done. Thanks for **[@hikanna](https://gitlab.com/hikanna)** for this advice.
+
 ## :black_square_button: Keybinds
 
 | Key                                                                         | Action                                  |
@@ -226,9 +268,14 @@ If you are using the right name, then in the panel you should see your wifi SSID
 - [@nwg-piotr - psuinfo](https://github.com/nwg-piotr)
 - [@boreycutts - i3-gaps](https://gist.github.com/boreycutts)
 - [@duangdeong - Dotfiles Tester](https://github.com/duangdeong)
+- [@hikanna - Tester](https://gitlab.com/hikanna)
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
 - [Aether Light Wallpaper](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
 - [Aether Dark Wallpaper](http://eskipaper.com/images/winter-freeway-wallpaper-1.jpg)
+
+```
+
+```
 
 ```
 
