@@ -18,120 +18,120 @@
 
 ## :wrench: Installation
 
-### :computer: **Debian & Ubuntu (and all based distributions)**
+- ### :computer: **Debian & Ubuntu (and all based distributions)**
 
-> **i3-Gaps Window Manager**
+  > **i3-Gaps Window Manager**
 
-[Use this tutorial](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783)
+  [Use this tutorial](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783)
 
-> **Other Dependencies**
+  > **Other Dependencies**
 
-```bash
-sudo apt install rsync python psmisc wireless-tools alsa-utils brightnessctl nitrogen dunst tint2 gsimplecal rofi lxappearance qt5ct qt5-style-plugins lxpolkit xautolock rxvt-unicode xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ffmpegthumbnailer tumbler w3m w3m-img geany viewnior mpv mpd mpc ncmpcpp pavucontrol parcellite neofetch htop imagemagick ffmpeg playerctl xsettingsd
-```
-
-> :diamonds: **oh-my-zsh & plugins**
-
-- ```bash
-  sudo apt install zsh
+  ```bash
+  sudo apt install rsync python psmisc wireless-tools alsa-utils brightnessctl nitrogen dunst tint2 gsimplecal rofi lxappearance qt5ct qt5-style-plugins lxpolkit xautolock rxvt-unicode xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ffmpegthumbnailer tumbler w3m w3m-img geany viewnior mpv mpd mpc ncmpcpp pavucontrol parcellite neofetch htop imagemagick ffmpeg playerctl xsettingsd
   ```
 
-- ```bash
-  chsh -s `which zsh` # Change default shell to zsh for current user
+  > :diamonds: **oh-my-zsh & plugins**
+
+  - ```bash
+    sudo apt install zsh
+    ```
+
+  - ```bash
+    chsh -s `which zsh` # Change default shell to zsh for current user
+    ```
+
+  - ```bash
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    ```
+
+  - ```bash
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    ```
+
+  - ```bash
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    ```
+
+  - [zsh-completions](https://software.opensuse.org/download.html?project=shells%3Azsh-users%3Azsh-completions&package=zsh-completions)
+
+  > **Picom**
+
+  - ```bash
+    sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev
+    ```
+  - ```bash
+    git clone https://github.com/yshui/picom.git && cd picom/
+    ```
+  - ```bash
+    git submodule update --init --recursive
+    ```
+  - ```bash
+    meson --buildtype=release . build
+    ```
+  - ```bash
+    ninja -C build
+    ```
+  - ```bash
+    ninja -C build install
+    ```
+
+- ### :computer: **Arch Based (Dependencies)**
+
+  > :exclamation: For AUR helper, im using **yay**
+
+  > :page_with_curl: **i3 Windows Manager**
+
+  ```bash
+  sudo pacman -S i3-gaps
   ```
 
-- ```bash
-  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  > :sound: **Audio**
+
+  ```bash
+  sudo pacman -S alsa-utils pulseaudio
   ```
 
-- ```bash
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  > :high_brightness: **Brightness**
+
+  ```bash
+  yay -S brightnessctl
   ```
 
-- ```bash
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  > :chart_with_upwards_trend: **Network Monitor & RAM Usage**
+
+  ```bash
+  yay -S psuinfo
   ```
 
-- [zsh-completions](https://software.opensuse.org/download.html?project=shells%3Azsh-users%3Azsh-completions&package=zsh-completions)
+  > :signal_strength: **Wireless Tools**
 
-> **Picom**
-
-- ```bash
-  sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev
-  ```
-- ```bash
-  git clone https://github.com/yshui/picom.git && cd picom/
-  ```
-- ```bash
-  git submodule update --init --recursive
-  ```
-- ```bash
-  meson --buildtype=release . build
-  ```
-- ```bash
-  ninja -C build
-  ```
-- ```bash
-  ninja -C build install
+  ```bash
+  sudo pacman -S wireless_tools
   ```
 
-### :computer: **Arch Based (Dependencies)**
+  > :hammer: **Other utility (panel, notification, terminal, file manager, etc)**
 
-> :exclamation: For AUR helper, im using **yay**
-
-> :page_with_curl: **i3 Windows Manager**
-
-```bash
-sudo pacman -S i3-gaps
-```
-
-> :sound: **Audio**
-
-```bash
-sudo pacman -S alsa-utils pulseaudio
-```
-
-> :high_brightness: **Brightness**
-
-```bash
-yay -S brightnessctl
-```
-
-> :chart_with_upwards_trend: **Network Monitor & RAM Usage**
-
-```bash
-yay -S psuinfo
-```
-
-> :signal_strength: **Wireless Tools**
-
-```bash
-sudo pacman -S wireless_tools
-```
-
-> :hammer: **Other utility (panel, notification, terminal, file manager, etc)**
-
-```bash
-yay -S dunst tint2 gsimplecal rofi feh lxappearance qt5ct qt5-styleplugins lxsession xautolock rxvt-unicode-patched xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler w3m geany nano vim viewnior pavucontrol parcellite neofetch htop picom-ibhagwan-git gtk2-perl xfce4-power-manager zsh zsh-completions imagemagick playerctl networkmanager-dmenu
-```
-
-> :diamonds: **oh-my-zsh & plugins**
-
-- ```bash
-  chsh -s /usr/bin/zsh # Change default shell to zsh for current user
+  ```bash
+  yay -S dunst tint2 gsimplecal rofi feh lxappearance qt5ct qt5-styleplugins lxsession xautolock rxvt-unicode-patched xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler w3m geany nano vim viewnior pavucontrol parcellite neofetch htop picom-ibhagwan-git gtk2-perl xfce4-power-manager zsh zsh-completions imagemagick playerctl networkmanager-dmenu
   ```
 
-- ```bash
-  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-  ```
+  > :diamonds: **oh-my-zsh & plugins**
 
-- ```bash
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  ```
+  - ```bash
+    chsh -s /usr/bin/zsh # Change default shell to zsh for current user
+    ```
 
-- ```bash
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  ```
+  - ```bash
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    ```
+
+  - ```bash
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    ```
+
+  - ```bash
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    ```
 
 ## :wrench: Dotfiles Install
 
