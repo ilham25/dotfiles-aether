@@ -22,12 +22,22 @@
 
   > **i3-Gaps Window Manager**
 
-  [Use this tutorial](https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783)
+  ```bash
+  sudo add-apt-repository ppa:kgilmer/speed-ricer
+  ```
+
+  ```bash
+  sudo apt-get update
+  ```
+
+  ```bash
+  sudo apt-get install i3-gaps-wm i3-gaps-session
+  ```
 
   > **Other Dependencies**
 
   ```bash
-  sudo apt install rsync python psmisc wireless-tools alsa-utils brightnessctl nitrogen dunst tint2 gsimplecal rofi lxappearance qt5ct qt5-style-plugins lxpolkit xautolock rxvt-unicode xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ffmpegthumbnailer tumbler w3m w3m-img geany viewnior mpv mpd mpc ncmpcpp pavucontrol parcellite neofetch htop imagemagick ffmpeg playerctl xsettingsd
+  sudo apt install feh rsync python psmisc wireless-tools alsa-utils brightnessctl nitrogen dunst tint2 gsimplecal rofi lxappearance qt5ct qt5-style-plugins lxpolkit xautolock rxvt-unicode xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ffmpegthumbnailer tumbler w3m w3m-img geany viewnior mpv mpd mpc ncmpcpp pavucontrol parcellite neofetch htop imagemagick ffmpeg playerctl xsettingsd
   ```
 
   > :diamonds: **oh-my-zsh & plugins**
