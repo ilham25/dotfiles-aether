@@ -85,6 +85,15 @@
     ninja -C build install
     ```
 
+  > **psuinfo - Network & CPU Monitor, RAM Usage**
+
+  - ```bash
+    git clone https://github.com/nwg-piotr/psuinfo.git && cd psuinfo/
+    ```
+  - ```bash
+    sudo cp -r {psuinfo,icons} /usr/bin
+    ```
+
 - ### :computer: **Arch Based**
 
   > :exclamation: For AUR helper, im using **yay**
@@ -107,7 +116,7 @@
   yay -S brightnessctl
   ```
 
-  > :chart_with_upwards_trend: **Network Monitor & RAM Usage**
+  > :chart_with_upwards_trend: **Network & CPU Monitor, RAM Usage**
 
   ```bash
   yay -S psuinfo
