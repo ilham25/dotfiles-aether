@@ -237,7 +237,7 @@ fc-cache -rv
   feh --bg-fill ~/Pictures/image.png
   ```
 
-  and that's basically done. Thanks for **[@hikanna](https://gitlab.com/hikanna)** for this advice.
+  and that's basically done. Thanks to **[@hikanna](https://gitlab.com/hikanna)** for this advice.
 
 ## :black_square_button: Keybinds
 
