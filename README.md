@@ -9,8 +9,6 @@
 
 ![SS](/Other/dot.gif)
 
-<img src="/Other/snowflake.png" align="right" />
-
 ## :snowflake: My Setup :snowflake:
 
 - **WM :** i3-gaps
