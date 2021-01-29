@@ -114,7 +114,7 @@
   > :sound: **Audio**
 
   ```bash
-  sudo pacman -S alsa-utils pulseaudio
+  sudo pacman -S alsa-utils pulseaudio pulseaudio-alsa
   ```
 
   > :high_brightness: **Brightness**
