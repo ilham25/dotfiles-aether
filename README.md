@@ -1,5 +1,7 @@
 ## :snowflake: :hibiscus: Aether Desktop
 
+![LOGO](/Other/logo-light.png)
+
 <img alt="Visits" src="https://badges.pufler.dev/visits/ilham25/dotfiles-aether?style=flat-square&label=&color=success&logo=GitHub&logoColor=white&labelColor=373e4d"/>
 <img alt="Repo Size" src="https://github-size-badge.herokuapp.com/ilham25/dotfiles-aether.svg"/>
 
