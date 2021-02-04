@@ -13,6 +13,8 @@ aestheticLight() {
     tint2 -c ~/.config/tint2/aesthetic-i3-light.tint2rc &
     # Terminal Color Scheme
     xrdb ~/.config/i3/theme/aesthetic-light/.Xresources
+    # Live Reload GTK Theme
+    timeout 0.1s xsettingsd -c ~/.config/i3/theme/aesthetic-light/.xsettingsd
 }
 aestheticDark() {
     # Dunst
@@ -25,6 +27,8 @@ aestheticDark() {
     tint2 -c ~/.config/tint2/aesthetic-i3-dark.tint2rc &
     # Terminal Color Scheme
     xrdb ~/.config/i3/theme/aesthetic-dark/.Xresources
+    # Live Reload GTK Theme
+    timeout 0.1s xsettingsd -c ~/.config/i3/theme/aesthetic-dark/.xsettingsd
 }
 
 "$theme"
