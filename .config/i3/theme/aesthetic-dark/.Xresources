@@ -1,6 +1,6 @@
 ! URXVT APPEARANCE
-URxvt.font:                       xft:mplus nerd font mono:size=10
-URxvt.geometry:                   84x15
+URxvt.font:                       xft:shuretechmono nerd font mono:size=10
+URxvt.geometry:                   84x18
 URxvt.internalBorder:             20
 URxvt.cursorBlink:                true
 URxvt.cursorUnderline:            true
@@ -13,6 +13,7 @@ URxvt.urgentOnBell:               false
 URxvt.depth:                      24
 URxvt.iso14755:                   false
 URxvt.iconFile:                   /home/iruha/.icons/gladient/term.png
+
 
 ! URXVT EXTENSIONS
 URxvt.perl-ext-common:            default,clipboard,keyboard-select,url-select,tabbedex
@@ -51,6 +52,7 @@ URxvt.keysym.M-s:                 perl:keyboard-select:search
 URxvt.urlLauncher:                google-chrome-stable
 URxvt.underlineURLs:              true
 URxvt.urlButton:                  1
+
 
 !COLOR SCHEME
 ! special

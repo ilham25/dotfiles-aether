@@ -10,7 +10,8 @@ case "$1" in
     echo "Theme changed to : Aesthetic - Dark"
     ;;
     *)
-    echo "Input error"
+    echo "aestheticLight" > ~/.config/i3/theme/now
+    echo "Theme changed to : Aesthetic - Light"
     ;;
 esac
 

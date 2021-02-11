@@ -1,6 +1,6 @@
 ! URXVT APPEARANCE
-URxvt.font:                       xft:mplus nerd font mono:size=10
-URxvt.geometry:                   84x15
+URxvt.font:                       xft:shuretechmono nerd font mono:size=10
+URxvt.geometry:                   84x18
 URxvt.internalBorder:             20
 URxvt.cursorBlink:                true
 URxvt.cursorUnderline:            true

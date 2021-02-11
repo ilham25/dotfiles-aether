@@ -69,19 +69,6 @@
 
 }
 
-.thunar .standard-view .view {
-  background-image: url("../gtk-assets/thunar-bg-xl.png");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: cover;
-
-}
-
-#.thunar .standard-view .view * {
-#  background-image: url("../gtk-assets/thunar-bg.png");
-
-#}
-.thunar .standard-view .view * { background: transparent; color: white; }
 
 .thunar .sidebar .view:not(:selected) {
   background-color: transparent;

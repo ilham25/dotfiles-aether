@@ -35,18 +35,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
-# kill focused window
-# bindsym $mod+Shift+q kill
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -89,9 +82,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -103,7 +93,6 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-#set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -115,7 +104,6 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-#bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -127,155 +115,81 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-#bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        #bindsym j resize shrink width 10 px or 10 ppt
-        #bindsym k resize grow height 10 px or 10 ppt
-        #bindsym l resize shrink height 10 px or 10 ppt
-        #bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+z mode "default"
-}
-
-bindsym $mod+z mode "resize"
-
+bindsym $mod+Control+Left resize shrink width 5 px or 5 ppt
+bindsym $mod+Control+Down resize grow height 5 px or 5 ppt
+bindsym $mod+Control+Up resize shrink height 5 px or 5 ppt
+bindsym $mod+Control+Right resize grow width 5 px or 5 ppt
 
 
 ## Customization ##
 
-
-
-
 ## ROFI APP LAUNCHER HANDLE [MOD+R] ##
-
 bindsym $mod+r exec bash -c '~/.config/rofi/scripts/appsmenu.sh'
 
-
-
 ## BRIGHTNESS HANDLE [BRIGHTNESS BUTTON] ##
-
 bindsym XF86MonBrightnessUp exec bash -c '~/.scripts/notify/change-brightness up'
 bindsym XF86MonBrightnessDown exec bash -c '~/.scripts/notify/change-brightness down'
 
-
-
 ## RUN COMPOSITOR (PICOM) ##
-
 exec picom -b
 
-
-
-## RUN KDE-CONNECT ##
-
-#exec kdeconnect-indicator
-
-
-
 ## OVERRIDE I3WM DEFAULT EXIT [MOD+SHIFT+E] ##
-
 bindsym $mod+Shift+e exec bash -c '~/.config/rofi/scripts/powermenu.sh'
 
-
-
 ## SCREENSHOT HANDLE ##
-
 bindsym $mod+Print exec bash -c '~/.config/rofi/scripts/screenshot.sh'
 bindsym Print exec bash -c '~/.scripts/shot-now'
 
-
-
 ## OPEN FILE MANAGER (THUNAR) HANDLE [MOD+E] ##
-
 bindsym $mod+e exec thunar
 
-
-
 ## WINDOWS KILL HANDLE [MOD+C] ##
-
 bindsym $mod+c kill
 
-
-
 ## NETWORK MANAGER DMENU HANDLE [MOD+F12] ##
-
 bindsym $mod+F12 exec networkmanager_dmenu
 
-
 ## VOLUME CHANGE HANDLE [VOLUME BUTTON] ##
-
 bindsym XF86AudioRaiseVolume exec bash -c '~/.scripts/notify/change-volume up'
 bindsym XF86AudioLowerVolume exec bash -c '~/.scripts/notify/change-volume down'
 bindsym XF86AudioMute exec bash -c '~/.scripts/notify/change-volume mute'
-#bindsym XF86AudioMicMute exec
-
-
 
 ## VOLUME CHANGE ALTERNATE KEYS HANDLE [CTRL+ALT+LEFT/RIGHT] ##
-
 bindsym Control+$alt+Right exec bash -c '~/.scripts/notify/change-volume up'
 bindsym Control+$alt+Left exec bash -c '~/.scripts/notify/change-volume down'
-
 
 ## VOLUME MUTE ALTERNATE KEYS HANDLE [CTROL+ALT+M] ##
 bindsym Control+$alt+m exec bash -c '~/.scripts/notify/change-volume mute'
 
-
 ## BRIGHTNESS CHANGE ALTERNATE KEYS HANDLE [CTRL+ALT+UP/DOWN] ##
-
 bindsym Control+$alt+Up exec bash -c '~/.scripts/notify/change-brightness up'
 bindsym Control+$alt+Down exec bash -c '~/.scripts/notify/change-brightness down' 
 
+## BROWSER PHYSICAL BUTTON
+bindsym XF86HomePage exec chromium
 
-
-## CHANGE/SCALE RESOLUTION (EXPERIMENTAL) ##
-
-# exec bash -c 'xrandr --output LVDS1 --scale 1.406x1.406'
-
-
+## LOCKSCREEN PHYSICAL BUTTON
+bindsym XF86ScreenSaver exec ~/.config/i3/lockscreen
 
 ## POWER SAVER ##
-
-#exec xfce4-power-manager &
-
-
+exec xfce4-power-manager &
 
 ## LOCK SCREEN HANDLE [MOD+L] ##
-
 bindsym $mod+l exec ~/.config/i3/lockscreen
 
-
-
 ## Kill dunst (notification daemon) ##
-
 exec killall dunst
 
-
-
 ## THEME LOAD ##
-
 exec bash -c ~/.config/i3/startup
-
 
 ## SET TERMINAL (URXVT) DEFAULT TO FLOATING ##
 for_window [class="URxvt"] floating enable
@@ -283,27 +197,28 @@ for_window [class="URxvt"] floating enable
 ## SET COLOR PICKER (GPICK) DEFAULT TO FLOATING ##
 for_window [class="Gpick"] floating enable
 
+## SET VIEWNIOR DEFAULT TO FLOATING ##
+for_window [class="Viewnior"] floating enable
 
 
 ## SET BRIGHTNESS TO LAST CHANGED BRIGHTNESS ##
-
 exec bash -c ~/.config/i3/scripts/brightness-startup
 
-
-
 ## MEDIA PLAYER HANDLE [MEDIA BUTTON] ##
-
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-## Gaps ##
+## GAPS ##
 gaps inner 6
 
-## Screenshot purpose
-#gaps horizontal 300
+## SCREENSHOT PURPOSE
+#gaps horizontal 200
 #gaps vertical 100
 
-## Remove i3wm Title Bar ##
+## REMOVE I3WM TITLE BAR ##
 for_window [class="^.*"] border pixel 0
 new_window 1pixel
+
+## COMMAND LIST
+bindsym $mod+k exec ~/.config/rofi/scripts/keymenu.sh

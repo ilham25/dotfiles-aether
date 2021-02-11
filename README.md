@@ -7,7 +7,8 @@
 
 ## :art: Screenshot
 
-![SS](/Other/dot.gif)
+![screenshot](/Other/aether-light.png)
+![screenshot](/Other/aether-dark.png)
 
 ## :snowflake: My Setup :snowflake:
 
@@ -18,6 +19,15 @@
 - **Notification :** dunst
 - **App launcher :** rofi
 - **File manager :** thunar
+
+## :triangular_flag_on_post: Changelog
+
+- New panel design
+- New wallpaper
+- New file manager sidebar
+- Power and Screenshot menu location change
+- Keybinds list added
+- GTK live reload
 
 ## :wrench: Installation
 
@@ -138,7 +148,7 @@
   > :hammer: **Other utility (panel, notification, terminal, file manager, etc)**
 
   ```bash
-  yay -S dunst tint2 gsimplecal rofi feh lxappearance qt5ct qt5-styleplugins lxsession xautolock rxvt-unicode-patched xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler w3m geany nano vim viewnior pavucontrol parcellite neofetch htop picom-ibhagwan-git gtk2-perl xfce4-power-manager zsh zsh-completions imagemagick playerctl networkmanager-dmenu xsettingsd
+  yay -S dunst tint2 gsimplecal rofi feh lxappearance qt5ct qt5-styleplugins lxsession xautolock rxvt-unicode-patched xclip scrot thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler w3m geany nano vim viewnior pavucontrol parcellite neofetch htop picom-git gtk2-perl xfce4-power-manager zsh zsh-completions imagemagick playerctl networkmanager-dmenu xsettingsd
   ```
 
   > :diamonds: **oh-my-zsh & plugins**
@@ -233,7 +243,7 @@ fc-cache -rv
   geany ~/.config/i3/startup
   ```
 
-  > **Insert # in the beginning of line 9 and 21**
+  > **Insert # in the beginning of line 9 and 23**
 
   ```cfg
   ...
@@ -242,7 +252,7 @@ fc-cache -rv
   21 #feh --bg-fill ~/.wallpaper/aes-dark-2.png
   ```
 
-  > **Insert this config to line 29**
+  > **Insert this config to line 33**
 
   ```cfg
   ...
@@ -267,25 +277,26 @@ fc-cache -rv
 
 ## :black_square_button: Keybinds
 
-| Key                                                                         | Action                                  |
-| --------------------------------------------------------------------------- | --------------------------------------- |
-| <kbd>Mod + C                                                                | Close Windows                           |
-| <kbd>Mod + Z (release) + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right: | Resize Windows - Tiling                 |
-| <kbd>Mod + Shift + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:       | Move Windows - Tiling                   |
-| <kbd>Mod + Shift + Space                                                    | Switch between tiling/floating          |
-| <kbd>Mod + Left Click (hold)                                                | Move Windows - Floating                 |
-| <kbd>Mod + Right Click (hold)                                               | Resize Windows - Floating               |
-| <kbd>Mod + 1/2/3/4/5/6/7/8/9/0                                              | Change Workspace                        |
-| <kbd>Mod + Shift + 1/2/3/4/5/6/7/8/9/0                                      | Move active windows to workspace number |
-| <kbd>Mod + E                                                                | Open file manager                       |
-| <kbd>Mod + R                                                                | App launcher                            |
-| <kbd>Mod + L                                                                | Lock Screen                             |
-| <kbd>Mod + Return                                                           | Open terminal                           |
-| <kbd>Mod + Shift + E                                                        | Power Menu                              |
-| <kbd>Mod + Shift + R                                                        | WM Restart                              |
-| <kbd>Mod + Print                                                            | Screenshot Menu                         |
-| <kbd>Mod + H                                                                | Change Tiling direction (Horizontal)    |
-| <kbd>Mod + J                                                                | Change Tiling Direction (Vertical)      |
+| Key                                                                   | Action                                  |
+| --------------------------------------------------------------------- | --------------------------------------- |
+| <kbd>Mod + K                                                          | List of all available keybinds          |
+| <kbd>Mod + C                                                          | Close Windows                           |
+| <kbd>Mod + Ctrl + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right:  | Resize Windows - Tiling                 |
+| <kbd>Mod + Shift + :arrow_up:/:arrow_down:/:arrow_left:/:arrow_right: | Move Windows - Tiling                   |
+| <kbd>Mod + Shift + Space                                              | Switch between tiling/floating          |
+| <kbd>Mod + Left Click (hold)                                          | Move Windows - Floating                 |
+| <kbd>Mod + Right Click (hold)                                         | Resize Windows - Floating               |
+| <kbd>Mod + 1/2/3/4/5/6/7/8/9/0                                        | Change Workspace                        |
+| <kbd>Mod + Shift + 1/2/3/4/5/6/7/8/9/0                                | Move active windows to workspace number |
+| <kbd>Mod + E                                                          | Open file manager                       |
+| <kbd>Mod + R                                                          | App launcher                            |
+| <kbd>Mod + L                                                          | Lock Screen                             |
+| <kbd>Mod + Return                                                     | Open terminal                           |
+| <kbd>Mod + Shift + E                                                  | Power Menu                              |
+| <kbd>Mod + Shift + R                                                  | WM Restart                              |
+| <kbd>Mod + Print                                                      | Screenshot Menu                         |
+| <kbd>Mod + H                                                          | Change Tiling direction (Horizontal)    |
+| <kbd>Mod + J                                                          | Change Tiling Direction (Vertical)      |
 
 ## :heart: Credits
 
@@ -296,5 +307,7 @@ fc-cache -rv
 - [@duangdeong - Dotfiles Tester](https://github.com/duangdeong)
 - [@hikanna - Tester](https://gitlab.com/hikanna)
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
-- [Aether Light Wallpaper](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
-- [Aether Dark Wallpaper](http://eskipaper.com/images/winter-freeway-wallpaper-1.jpg)
+- [Aether Light Wallpaper v1](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
+- [Aether Dark Wallpaper v1](http://eskipaper.com/images/winter-freeway-wallpaper-1.jpg)
+- [Aether Light Wallpaper v2](https://wallpaperaccess.com/download/anime-cherry-blossom-85646)
+- [Aether Dark Wallpaper v2](https://wallpaperaccess.com/full/44207.jpg)
