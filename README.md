@@ -9,6 +9,7 @@
 
 ![screenshot](/Other/aether-light.png)
 ![screenshot](/Other/aether-dark.png)
+![rightbtn](/Other/right-btn.png)
 
 ## :snowflake: My Setup :snowflake:
 
