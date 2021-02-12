@@ -30,7 +30,21 @@
 - Keybinds list added
 - GTK live reload
 
-## :wrench: Installation
+## :beginner: Installation (Installer method)
+
+> **Clone installer repository**
+
+```bash
+git clone https://github.com/ilham25/dotfiles-installer && cd dotfiles-installer/
+```
+
+> **Run the installer**
+
+```bash
+./installer
+```
+
+## :wrench: Installation (Manual method)
 
 ![DEBIAN](/Other/debian-based.png)
 
