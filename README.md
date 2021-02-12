@@ -114,6 +114,16 @@
     sudo cp -r {psuinfo,icons} /usr/bin
     ```
 
+  > **networkmanager_dmenu install**
+
+  - ```bash
+    https://github.com/firecat53/networkmanager-dmenu.git && cd networkmanager-dmenu/
+    ```
+
+  - ```bash
+    sudo cp networkmanager_dmenu /usr/bin
+    ```
+
 ![ARCH](/Other/arch-based.png)
 
 - ### :computer: **Arch Based**
