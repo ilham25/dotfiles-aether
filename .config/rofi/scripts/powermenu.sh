@@ -15,10 +15,10 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)"
 case $chosen in
     $shutdown)
-        ~/.config/rofi/scripts/promptmenu.sh --yes-command "loginctl poweroff" --query "      Poweroff?"
+        ~/.config/rofi/scripts/promptmenu.sh --yes-command "poweroff" --query "      Poweroff?"
         ;;
     $reboot)
-        ~/.config/rofi/scripts/promptmenu.sh --yes-command "loginctl reboot" --query "       Reboot?"
+        ~/.config/rofi/scripts/promptmenu.sh --yes-command "reboot" --query "       Reboot?"
         ;;
     $lock)
         ~/.config/i3/lockscreen
@@ -26,9 +26,9 @@ case $chosen in
     $suspend)
         mpc -q pause
         # systemd
-        #systemctl suspend
+        systemctl suspend
         # elogind (runit, etc)
-        loginctl suspend
+        #loginctl suspend
         #dm-tool lock
         ~/.config/i3/lockscreen
         ~/.config/i3/scripts/brightness-startup
