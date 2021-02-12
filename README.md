@@ -27,7 +27,7 @@
 - New wallpaper
 - New file manager sidebar
 - Power and Screenshot menu location change
-- Keybinds list added
+- Keybinds list added <kbd>Mod</kbd> + <kbd>K</kbd>
 - GTK live reload
 
 ## :beginner: Installation (Installer method)
@@ -332,6 +332,7 @@ fc-cache -rv
 - [i3wm Wiki](https://i3wm.org/docs/userguide.html)
 - [@owl4ce](https://github.com/owl4ce/)
 - [@nwg-piotr - psuinfo](https://github.com/nwg-piotr)
+- [@firecat53 - networkmanager-dmenu](https://github.com/firecat53)
 - [@boreycutts - i3-gaps](https://gist.github.com/boreycutts)
 - [@duangdeong - Dotfiles Tester](https://github.com/duangdeong)
 - [@hikanna - Tester](https://gitlab.com/hikanna)
