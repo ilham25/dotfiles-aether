@@ -1,38 +1,46 @@
 #!/usr/bin/env bash
 
-# Select window or draw and add borders then show preview
-# See scrot manual
+# Load Global Variable
+source $HOME/.aether-corevar
 
-savedir=~/Pictures/Screenshots
-bordercolor="#ffffff"
+# MODIFIED from owl4ce
 
-icon="~/.icons/gladient/shot.png"
+SCRIPTS_DIR="$HOME/.scripts"
+TIMER_SEC="5"
+SAVE_DIR="$HOME/Pictures"
+COPY_FRAMED="yes" # Copy the latest framed screenshot to clipboard
+OPEN_FRAMED="yes" # Open after framed screenshot with viewnior (if exist)
+QUALITY="100" # 1-100, high value means high size with low compression
+EXNOTIFY_SEND="$SCRIPTS_DIR/notify/notify-send.sh"
 
-# Begin
-rm /tmp/*_scrot*.png
-sleep .5s
-scrot -s -f -b -e 'mv $f /tmp/' -l style=dash,width=3,color="#2be491" && \
+NOTIF_SS_ICON="$ICONDIR/shot.png"
 
-notify-send -t 750 -i $icon -u low "Screenshot" "Processing captured image"
+{
+    [[ ! -d $SAVE_DIR/Screenshots ]] && mkdir $SAVE_DIR/Screenshots
+    sleep .5s
+    
+    rm /tmp/*_scrot*.png &> /dev/null
+    scrot -q $QUALITY -sfbe 'mv $f /tmp/' -l style=dash,width=3,color="#2be491" &> /dev/null && \
+    $EXNOTIFY_SEND -r 12 -t 750 -i $NOTIF_SS_ICON -u low "Screenshot" "Processing captured image"
+    
+    CURRENT="$(ls /tmp/ | grep 'scrot' | awk -F'.png' '{print $1}')"
 
-# Use imagemagick to add border
-current="$(ls /tmp/ | grep 'scrot' | awk -F'.png' '{print $1}')"
+    convert /tmp/$CURRENT.png \
+    \( +clone -alpha extract -draw 'fill black polygon 0,0 0,8 8,0 fill white circle 8,8 8,0' \
+    \( +clone -flip \) -compose Multiply -composite \( +clone -flop \) -compose Multiply -composite \) \
+    -alpha off -compose CopyOpacity -composite /tmp/$CURRENT-rounded.png &> /dev/null
 
-convert /tmp/$current.png \( +clone -background black -shadow 30x10+0+0 \) \
-+swap -background none -layers merge +repage /tmp/$current-shadow.png
+    convert /tmp/$CURRENT-rounded.png \( +clone -background black -shadow 25x10+0+5 \) \
+    +swap -background none -layers merge +repage /tmp/$CURRENT-shadow.png &> /dev/null
 
-convert /tmp/$current-shadow.png -bordercolor $bordercolor \
--border 5 $savedir/$current-framed.png
+    convert /tmp/$CURRENT-shadow.png -bordercolor $SSFRAME \
+    -border 5 $SAVE_DIR/Screenshots/$CURRENT.png &> /dev/null
 
-# Copy original file
-cp /tmp/$current.png $savedir
-
-rm /tmp/*_scrot*.png
-
-# Checking final file
-[[ -f $savedir/$current-framed.png ]] && \
-
-notify-send -i $icon -u low "Screenshot" "Saved in\n<u>$savedir/</u>" && \
-
-# Open final result
-viewnior $savedir/$current-framed.png &> /dev/null
+    rm /tmp/*_scrot*.png &> /dev/null
+    
+    [[ -f $SAVE_DIR/Screenshots/$CURRENT.png ]] && \
+    $EXNOTIFY_SEND -r 12 -i $NOTIF_SS_ICON -u low "Screenshot" "Saved in\n<u>$SAVE_DIR/Screenshots/</u>" && \
+    [[ "$COPY_FRAMED" = "yes" ]] && xclip -selection clipboard -target image/png -i $SAVE_DIR/Screenshots/$CURRENT.png && \
+    [[ "$OPEN_FRAMED" = "yes" ]] && [[ -x "$(which "viewnior" 2> /dev/null)" ]] && \
+    viewnior $SAVE_DIR/Screenshots/$CURRENT.png &> /dev/null
+} &

@@ -60,18 +60,13 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h exec bash -c "~/.scripts/i3-notify 'split h' 'Horizontal' 'Tilling Direction'"
 
 # split in vertical orientation
-bindsym $mod+j split v
+bindsym $mod+j exec bash -c "~/.scripts/i3-notify 'split v' 'Vertical' 'Tilling Direction'"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
-#bindsym $mod+v layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -95,15 +90,15 @@ set $ws8 "8"
 set $ws9 "9"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
+bindsym $mod+1 exec bash -c '~/.scripts/i3-notify "workspace number $ws1" "Workspace 1" "Switch Workspace"'
+bindsym $mod+2 exec bash -c '~/.scripts/i3-notify "workspace number $ws2" "Workspace 2" "Switch Workspace"'
+bindsym $mod+3 exec bash -c '~/.scripts/i3-notify "workspace number $ws3" "Workspace 3" "Switch Workspace"'
+bindsym $mod+4 exec bash -c '~/.scripts/i3-notify "workspace number $ws4" "Workspace 4" "Switch Workspace"'
+bindsym $mod+5 exec bash -c '~/.scripts/i3-notify "workspace number $ws5" "Workspace 5" "Switch Workspace"'
+bindsym $mod+6 exec bash -c '~/.scripts/i3-notify "workspace number $ws6" "Workspace 6" "Switch Workspace"'
+bindsym $mod+7 exec bash -c '~/.scripts/i3-notify "workspace number $ws7" "Workspace 7" "Switch Workspace"'
+bindsym $mod+8 exec bash -c '~/.scripts/i3-notify "workspace number $ws8" "Workspace 8" "Switch Workspace"'
+bindsym $mod+9 exec bash -c '~/.scripts/i3-notify "workspace number $ws9" "Workspace 9" "Switch Workspace"'
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -117,10 +112,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec bash -c '~/.scripts/i3-notify "reload" "Reload Config"'
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec bash -c '~/.scripts/i3-notify "restart" "WM Restart"'
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+Control+Left resize shrink width 5 px or 5 ppt
@@ -166,7 +161,7 @@ bindsym XF86AudioMute exec bash -c '~/.scripts/notify/change-volume mute'
 bindsym Control+$alt+Right exec bash -c '~/.scripts/notify/change-volume up'
 bindsym Control+$alt+Left exec bash -c '~/.scripts/notify/change-volume down'
 
-## VOLUME MUTE ALTERNATE KEYS HANDLE [CTROL+ALT+M] ##
+## VOLUME MUTE ALTERNATE KEYS HANDLE [CTRL+ALT+M] ##
 bindsym Control+$alt+m exec bash -c '~/.scripts/notify/change-volume mute'
 
 ## BRIGHTNESS CHANGE ALTERNATE KEYS HANDLE [CTRL+ALT+UP/DOWN] ##
@@ -177,13 +172,13 @@ bindsym Control+$alt+Down exec bash -c '~/.scripts/notify/change-brightness down
 bindsym XF86HomePage exec chromium
 
 ## LOCKSCREEN PHYSICAL BUTTON
-bindsym XF86ScreenSaver exec ~/.config/i3/lockscreen
+bindsym XF86ScreenSaver exec bash -c 'source $HOME/.aether-corevar && $LOCK'
 
 ## POWER SAVER ##
 exec xfce4-power-manager &
 
 ## LOCK SCREEN HANDLE [MOD+L] ##
-bindsym $mod+l exec ~/.config/i3/lockscreen
+bindsym $mod+l exec bash -c 'source $HOME/.aether-corevar && $LOCK'
 
 ## Kill dunst (notification daemon) ##
 exec killall dunst
@@ -200,21 +195,16 @@ for_window [class="Gpick"] floating enable
 ## SET VIEWNIOR DEFAULT TO FLOATING ##
 for_window [class="Viewnior"] floating enable
 
-
 ## SET BRIGHTNESS TO LAST CHANGED BRIGHTNESS ##
 exec bash -c ~/.config/i3/scripts/brightness-startup
 
 ## MEDIA PLAYER HANDLE [MEDIA BUTTON] ##
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec bash -c 'playerctl play-pause && ~/.scripts/notify/short-notify "media-playpause.png" 3000 "Play / Pause" "Media Control"'
+bindsym XF86AudioNext exec bash -c 'playerctl next && ~/.scripts/notify/short-notify "media-next.png" 3000 "Next" "Media Control"'
+bindsym XF86AudioPrev exec bash -c 'playerctl previous && ~/.scripts/notify/short-notify "media-previous.png" 3000 "Previous" "Media Control"'
 
 ## GAPS ##
 gaps inner 6
-
-## SCREENSHOT PURPOSE
-#gaps horizontal 200
-#gaps vertical 100
 
 ## REMOVE I3WM TITLE BAR ##
 for_window [class="^.*"] border pixel 0
@@ -222,3 +212,7 @@ new_window 1pixel
 
 ## COMMAND LIST
 bindsym $mod+k exec ~/.config/rofi/scripts/keymenu.sh
+
+
+## RUN KDE-CONNECT ##
+exec kdeconnect-indicator

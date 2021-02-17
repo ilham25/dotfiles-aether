@@ -23,12 +23,13 @@
 
 ## :triangular_flag_on_post: Changelog
 
-- New panel design
+- **Centralized Variable `.aether-corevar`**
 - New wallpaper
 - New file manager sidebar
-- Power and Screenshot menu location change
-- Keybinds list added <kbd>Mod</kbd> + <kbd>K</kbd>
-- GTK live reload
+- New notification icon
+- Change wallpaper using :large_blue_circle: blue circle in the panel
+- Network interface auto-detect
+- Support for 1920x1080 screen resolution
 
 ## :beginner: Installation (Installer method)
 
@@ -165,7 +166,7 @@ git clone https://github.com/ilham25/dotfiles-installer && cd dotfiles-installer
   > :chart_with_upwards_trend: **Network & CPU Monitor, RAM Usage**
 
   ```bash
-  yay -S psuinfo python3-psutil
+  yay -S psuinfo
   ```
 
   > :signal_strength: **Wireless Tools**
@@ -239,70 +240,44 @@ fc-cache -rv
 
 ## :gear: User Configuration
 
-- **:warning: WiFi connected but panel icon and title doesn't say connected**
+**:desktop_computer: Screen Resolution**
+This dotfiles only support **1366x768** and **1920x1080** screen resolution.
 
-  First, check the name of your wireless card
+> Open configuration file
 
-  ```bash
-  ip a
-  ```
+```bash
+nano ~/.aether-corevar
+```
 
-  There you should see something started with **wl** like **wlo1, wlp3s0**. Open panel network executor using geany or another text editor.
+Change the value to your own screen resolution
 
-  ```bash
-  geany ~/.config/tint2/executor/network
-  ```
+```cfg
+...
+34 RESOLUTION="1366x768" # Change this value
+...
+```
 
-  ```cfg
-  ...
-  6 intwifi="wlo1" # Change this to your wireless card interface name
-  7 intether="enp4s0" # Also for your ethernet
-  ```
+> Save and change your theme to apply effect
 
-  Change **intwifi** value to your wireless card interface, mine is **wlo1**, this also worked to your ethernet, but use **intether**.
-  If you are using the right name, then in the panel you should see your wifi SSID and the icon doesn't disable anymore
+**:fireworks: Power Menu Command**
+If you are not using systemd init, ypu can custom the power menu command.
 
-- **:city_sunset: Universal Walpaper Config**
+> Open configuration file
 
-  If you dont like my default wallpaper or want to change it, follow this steps :
+```bash
+nano ~/.aether-corevar
+```
 
-  > **Run this command to open my theme config using geany**
+Change the configuration below
 
-  ```bash
-  geany ~/.config/i3/startup
-  ```
-
-  > **Insert # in the beginning of line 9 and 23**
-
-  ```cfg
-  ...
-  9 #feh --bg-fill ~/.wallpaper/aes-light-2.png
-  ...
-  21 #feh --bg-fill ~/.wallpaper/aes-dark-2.png
-  ```
-
-  > **Insert this config to line 33**
-
-  ```cfg
-  ...
-  29 ~/.fehbg
-  ```
-
-  > **Save**
-
-  > **Next, change your wallpaper using this command**
-
-  ```bash
-  feh --bg-fill PATH_TO_WALLPAPER
-  ```
-
-  Example
-
-  ```bash
-  feh --bg-fill ~/Pictures/image.png
-  ```
-
-  and that's basically done. Thanks to **[@hikanna](https://gitlab.com/hikanna)** for this advice.
+```cfg
+...
+39 POWEROFF="poweroff" # systemd default
+40 REBOOT="reboot" # systemd default
+41 LOCK="dm-tool lock"
+42 SLEEP="suspend" # systemd default
+...
+```
 
 ## :black_square_button: Keybinds
 
@@ -337,7 +312,9 @@ fc-cache -rv
 - [@duangdeong - Dotfiles Tester](https://github.com/duangdeong)
 - [@hikanna - Tester](https://gitlab.com/hikanna)
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
-- [Aether Light Wallpaper v1](https://pinterest.com/pin/create/button/?media=https://www.pixelstalk.net/wp-content/uploads/2016/12/Anime-Cherry-Blossom-Background-HD-620x349.jpg&url=https://www.pixelstalk.net/download-free-anime-cherry-blossom-background/&is_video=false&description=Anime%20Cherry%20Blossom%20Background%20HD.)
-- [Aether Dark Wallpaper v1](http://eskipaper.com/images/winter-freeway-wallpaper-1.jpg)
-- [Aether Light Wallpaper v2](https://wallpaperaccess.com/download/anime-cherry-blossom-85646)
-- [Aether Dark Wallpaper v2](https://wallpaperaccess.com/full/44207.jpg)
+- [Aether Light v3 Wallpaper](https://wallpaperaccess.com/download/anime-scenery-3455)
+- [Aether Dark v3 Wallpaper](https://www.itl.cat/pngfile/big/15-157194_free-download-computer-wallpaper-hd-for-desktop-park.jpg)
+
+```
+
+```

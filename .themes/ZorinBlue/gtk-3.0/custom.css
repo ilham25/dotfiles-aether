@@ -63,7 +63,7 @@
 }
 
 .thunar .sidebar {
-  background-image: url("../gtk-assets/thunar-sidebar.png");
+  background-image:url("../gtk-assets/thunar-sidebar.png")
 }
 
 

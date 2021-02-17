@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Load Global Variable
+source $HOME/.aether-corevar
+
 # Audio volume changer using alsa mixer
 
 function cvol {
@@ -14,24 +17,24 @@ function notify {
     volume=`cvol`
     
     if [ "$volume" = "0" ]; then
-        icon_name="notification-audio-volume-muted"
+        icon_name="$ICONDIR/volume-muted"
     else    
         if [  "$volume" -lt "10" ]; then
-            icon_name="notification-audio-volume-low"
+            icon_name="$ICONDIR/volume-low"
         else
             if [ "$volume" -lt "30" ]; then
-                icon_name="notification-audio-volume-low"
+                icon_name="$ICONDIR/volume-low"
             else
                 if [ "$volume" -lt "70" ]; then
-                    icon_name="notification-audio-volume-medium"
+                    icon_name="$ICONDIR/volume-medium"
                 else
-                    icon_name="notification-audio-volume-high"
+                    icon_name="$ICONDIR/volume-high"
                 fi
             fi
         fi
     fi
 
-    ~/.scripts/notify/notify-send.sh -i "$icon_name" -t 2000 -r 123 "$volume "
+    $NOTIFIER -i "$icon_name.png" -t 2000 -r 123 "$volume "
 }
 
 case $1 in
@@ -53,8 +56,8 @@ case $1 in
     # Toggle mute
 	amixer -D pulse set Master 1+ toggle > /dev/null
 	if chkmute ; then
-    icon_name="notification-audio-volume-muted"
-    ~/.scripts/notify/notify-send.sh -i "$icon_name" -t 2000 -r 123 "Muted "
+    icon_name="$ICONDIR/volume-muted"
+    $NOTIFIER -i "$icon_name.png" -t 2000 -r 123 "Muted "
 	else
 	    notify
 	fi

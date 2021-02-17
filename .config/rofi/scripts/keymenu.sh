@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DMENU="rofi -dmenu -i -p Search -theme themes/appsmenu.rasi"
 # OPTIONS = [[label, command]]

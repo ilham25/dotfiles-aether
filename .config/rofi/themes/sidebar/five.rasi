@@ -11,8 +11,8 @@
 }
 
 #window {
-  width: 29%;
-  height: 10.2%;
+  width: 396px;
+  height: 78px;
   anchor: south;
   location: south;
   x-offset: 0%;

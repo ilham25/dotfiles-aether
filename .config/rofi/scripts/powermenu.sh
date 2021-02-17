@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Load Global Variable
+source $HOME/.aether-corevar
+
 rofi_command="rofi -theme themes/sidebar/five.rasi"
 
 # Options
@@ -15,22 +18,18 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)"
 case $chosen in
     $shutdown)
-        ~/.config/rofi/scripts/promptmenu.sh --yes-command "poweroff" --query "      Poweroff?"
+        ~/.config/rofi/scripts/promptmenu.sh --yes-command "$POWEROFF" --query "      Poweroff?"
         ;;
     $reboot)
-        ~/.config/rofi/scripts/promptmenu.sh --yes-command "reboot" --query "       Reboot?"
+        ~/.config/rofi/scripts/promptmenu.sh --yes-command "$REBOOT" --query "       Reboot?"
         ;;
     $lock)
-        ~/.config/i3/lockscreen
+        bash -c "$LOCK"
         ;;
     $suspend)
         mpc -q pause
-        # systemd
-        systemctl suspend
-        # elogind (runit, etc)
-        #loginctl suspend
-        #dm-tool lock
-        ~/.config/i3/lockscreen
+        bash -c "$SLEEP"
+        bash -c "$LOCK"
         ~/.config/i3/scripts/brightness-startup
         ;;
     $logout)

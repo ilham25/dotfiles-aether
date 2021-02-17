@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Load Global Variable
+source $HOME/.aether-corevar
+
+# Color Variable
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${GREEN}# ******************************************************* #"
+echo -e '# Use $HOME instead of ~/ to declare home directory       #'
+echo -e '# GOOD example : $HOME/Pictures/image.jpg                 #'
+echo -e '# GOOD example : /home/username/Pictures/image.jpg        #'
+echo -e "# ${RED}BAD example : ~/Pictures/image.jpg${GREEN}                      #"
+echo -e "# Use ${YELLOW}DEFAULT${GREEN} to use both theme default wallpaper         #"
+echo -e "# ******************************************************* #${NC}"
+read -p "Input : " -i "$HOME/" -e IMGPATH
+sed -i '10s|WALLPAPER=.*|WALLPAPER="'$IMGPATH'"|' ~/.aether-corevar && ~/.config/i3/scripts/wallpaper
+[[ ! "$?" = "0" ]] && $NOTIFIER -r 14 -i "$ICONDIR/wallpaper.png" -t 2500 -u low "Error Occured" "Change Wallpaper" && exit 1
+
+if [[ $IMGPATH == "DEFAULT" ]]; then
+    $NOTIFIER -r 14 -i "$ICONDIR/wallpaper.png" -t 1500 -u low "Change Wallpaper" "Default Theme"
+else
+    $NOTIFIER -r 14 -i "$ICONDIR/wallpaper.png" -t 1500 -u low "Change Wallpaper" "$IMGPATH"
+fi

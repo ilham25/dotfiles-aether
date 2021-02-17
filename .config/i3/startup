@@ -1,36 +1,49 @@
 #!/usr/bin/env bash
 
-theme="$(cat ~/.config/i3/theme/now)"
+# Load Global Variable
+source $HOME/.aether-corevar
 
-aestheticLight() {
+aetherLight() {
     # Dunst
     dunst -config ~/.config/dunst/dunstrc-left &
-    # Wallpaper
-    feh --bg-fill ~/.wallpaper/aes-light-2.png
     # GTK, rofi, color theme
-    ~/.config/i3/theme/aesthetic-light/aesthetic-light-theme
+    ~/.config/i3/theme/aether-light/aether-light-theme
     # Panel
-    tint2 -c ~/.config/tint2/aesthetic-i3-light.tint2rc &
+    tint2 -c ~/.config/tint2/aether-i3-light.tint2rc &
     # Terminal Color Scheme
-    xrdb ~/.config/i3/theme/aesthetic-light/.Xresources
+    xrdb ~/.config/i3/theme/aether-light/.Xresources
+    # Screenshot frame color
+    sed -i '11s_SSFRAME=.*_SSFRAME="#f9f9f9"_' ~/.aether-corevar
+    # Notify
+    $NOTIFIER -r 13 -i "$ICONDIR/theme.png" -t 2000 -u low "Light Mode" "Change Theme"
     # Live Reload GTK Theme
-    timeout 0.1s xsettingsd -c ~/.config/i3/theme/aesthetic-light/.xsettingsd
+    timeout 0.1s xsettingsd -c ~/.config/i3/theme/aether-light/.xsettingsd 
 }
-aestheticDark() {
+aetherDark() {
     # Dunst
     dunst -config ~/.config/dunst/dunstrc-dark-left &
-    # Wallpaper
-    feh --bg-fill ~/.wallpaper/aes-dark-2.png
     # GTK, rofi, color theme
-    ~/.config/i3/theme/aesthetic-dark/aesthetic-dark-theme
+    ~/.config/i3/theme/aether-dark/aether-dark-theme
     # Panel
-    tint2 -c ~/.config/tint2/aesthetic-i3-dark.tint2rc &
+    tint2 -c ~/.config/tint2/aether-i3-dark.tint2rc &
     # Terminal Color Scheme
-    xrdb ~/.config/i3/theme/aesthetic-dark/.Xresources
+    xrdb ~/.config/i3/theme/aether-dark/.Xresources
+    # Screenshot frame color
+    sed -i '11s_SSFRAME=.*_SSFRAME="#21252B"_' ~/.aether-corevar
+    # Notify
+    $NOTIFIER -r 13 -i "$ICONDIR/theme.png" -t 2000 -u low "Dark Mode" "Change Theme"
     # Live Reload GTK Theme
-    timeout 0.1s xsettingsd -c ~/.config/i3/theme/aesthetic-dark/.xsettingsd
+    timeout 0.1s xsettingsd -c ~/.config/i3/theme/aether-dark/.xsettingsd
 }
 
-"$theme"
+# Load rofi theme based on resolution
+~/.config/i3/scripts/change-resolution $RESOLUTION
+
+# Load Theme
+"$THEME"
+
+# Wallpaper
+~/.config/i3/scripts/wallpaper &> /dev/null
+
 exit
 

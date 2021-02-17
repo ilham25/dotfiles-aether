@@ -2,16 +2,13 @@
 
 case "$1" in
     1)
-    echo "aestheticLight" > ~/.config/i3/theme/now
-    echo "Theme changed to : Aesthetic - Light"
+    sed -i '9s_THEME=.*_THEME="aetherLight"_' ~/.aether-corevar
     ;;
     2)
-    echo "aestheticDark" > ~/.config/i3/theme/now
-    echo "Theme changed to : Aesthetic - Dark"
+    sed -i '9s_THEME=.*_THEME="aetherDark"_' ~/.aether-corevar
     ;;
     *)
-    echo "aestheticLight" > ~/.config/i3/theme/now
-    echo "Theme changed to : Aesthetic - Light"
+    sed -i '9s_THEME=.*_THEME="aetherLight"_' ~/.aether-corevar
     ;;
 esac
 

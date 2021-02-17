@@ -63,16 +63,12 @@
 }
 
 .thunar .sidebar {
-  background-image: url("../gtk-assets/thunar-sidebar.png");
-  #background-size: cover;
-  #background-repeat: no-repeat;
-
+  background-image:url("../gtk-assets/thunar-sidebar.png")
 }
 
 
 .thunar .sidebar .view:not(:selected) {
   background-color: transparent;
-  /* background-color: rgba(0, 0, 0, 0.6); */
 }
 
 .thunar statusbar {

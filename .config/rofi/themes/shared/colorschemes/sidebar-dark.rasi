@@ -2,7 +2,7 @@
   accent:           #51cdff;
   background:       #21252B;
   background-light: #21252B;
-  foreground:       #f9f9f9;
+  foreground:       #51cdff;
   on:               #2be491;
   off:              #4c566a;
 }

@@ -2,7 +2,7 @@
  * Allows to change the settings of every menu simply by editing this file
  */
  
-@import "colorschemes/fullscreen.rasi"
+@import "colorschemes/fullscreen-dark.rasi"
 @import "resolutions/1366x768.rasi"
 
 #window {

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Load Global Variable
+source $HOME/.aether-corevar
+
+if [[ "$1" == "change" ]]; then
+    urxvt -e ~/.config/i3/scripts/change-wallpaper
+else
+    if [[ $WALLPAPER == "DEFAULT" ]]; then
+        if [[ $THEME == "aetherLight" ]]; then
+            feh --bg-fill ~/.wallpaper/aether-light-3.png
+        elif [[ $THEME == "aetherDark" ]]; then
+            feh --bg-fill ~/.wallpaper/aether-dark-3.png
+        fi
+    else
+        feh --bg-fill $WALLPAPER
+    fi
+fi

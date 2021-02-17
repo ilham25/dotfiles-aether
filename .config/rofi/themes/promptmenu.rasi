@@ -47,6 +47,7 @@
   border: 0px;
   padding: @option-element-padding;
   background-color: @background-light;
+  border-radius: 8px;
 }
 #element.selected {
   background-color: @accent;

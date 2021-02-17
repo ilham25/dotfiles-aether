@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Load Global Variable
+source $HOME/.aether-corevar
+
 # Brightness handler using brightnessctl
 
 function cbright {
@@ -10,39 +13,39 @@ function notify {
     brightness=`cbright`
     
     if [ "$brightness" = "0" ]; then
-        icon_name="notification-display-brightness-off"
+        icon_name="$ICONDIR/brightness-off"
     else    
         if [  "$brightness" -lt "10" ]; then
-            icon_name="notification-display-brightness-low"
+            icon_name="$ICONDIR/brightness-low"
         else
             if [ "$brightness" -lt "30" ]; then
-                icon_name="notification-display-brightness-medium"
+                icon_name="$ICONDIR/brightness-low"
             else
                 if [ "$brightness" -lt "70" ]; then
-                    icon_name="notification-display-brightness-medium"
+                    icon_name="$ICONDIR/brightness-medium"
                 else
                     if [ "$brightness" -lt "100" ]; then
-                        icon_name="notification-display-brightness-high"
+                        icon_name="$ICONDIR/brightness-high"
                     else
-                        icon_name="notification-display-brightness-full"
+                        icon_name="$ICONDIR/brightness-full"
                     fi
                 fi
             fi
         fi
     fi
     echo "$brightness" > ~/.config/i3/scripts/brightness-current
-    ~/.scripts/notify/notify-send.sh -i "$icon_name" -t 2000 -r 1234 "$brightness "
+    $NOTIFIER -i "$icon_name.png" -t 2000 -r 1234 "$brightness "
 }
 
 case $1 in
     up)
 	# +5%
-	brightnessctl set 5%+ > /dev/null
+	brightnessctl set 2%+ > /dev/null
 	notify
 	;;
     down)
     # -5%
-    brightnessctl set 5%- > /dev/null
+    brightnessctl set 2%- > /dev/null
 	notify
 	;;
     optimal)
