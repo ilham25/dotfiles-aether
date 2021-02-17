@@ -8,9 +8,9 @@ source $HOME/.aether-corevar
 
 savedir=~/Pictures/Screenshots
 # Begin
-rm /tmp/*_scrot*.png
 
-[[ ! -d $savedir ]] && mkdir $savedir
+[[ ! -d $savedir ]] && mkdir "$savedir"
+rm /tmp/*_scrot*.png
 
 case $1 in
     delay)

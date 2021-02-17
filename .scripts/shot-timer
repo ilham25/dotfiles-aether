@@ -9,7 +9,7 @@ source $HOME/.aether-corevar
 savedir=~/Pictures/Screenshots
 sec="5"
 
-[[ ! -d $savedir ]] && mkdir $savedir
+[[ ! -d $savedir ]] && mkdir "$savedir"
 
 # Begin
 notify-send -t 1000 -i "$ICONDIR/shot.png" -u low "Screenshot" "In $(echo $sec)s .."
