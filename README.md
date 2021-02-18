@@ -260,7 +260,7 @@ Change the value to your own screen resolution
 > Save and change your theme to apply effect
 
 **:fireworks: Power Menu Command**
-If you are not using systemd init, ypu can custom the power menu command.
+If you are not using systemd init, you can custom the power menu command.
 
 > Open configuration file
 
