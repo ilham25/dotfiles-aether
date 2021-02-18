@@ -213,6 +213,5 @@ new_window 1pixel
 ## COMMAND LIST
 bindsym $mod+k exec ~/.config/rofi/scripts/keymenu.sh
 
-
-## RUN KDE-CONNECT ##
-exec kdeconnect-indicator
+## Run lxpolkit
+exec_always lxpolkit
