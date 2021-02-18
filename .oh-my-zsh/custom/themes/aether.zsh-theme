@@ -1,4 +1,4 @@
-# Arrow minimal zsh theme
+# Aether minimal zsh theme
 # Requires Nerd Fonts for the icons
 
 # Configuration
