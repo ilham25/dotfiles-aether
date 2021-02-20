@@ -314,7 +314,3 @@ Change the configuration below
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
 - [Aether Light v3 Wallpaper](https://wallpaperaccess.com/download/anime-scenery-3455)
 - [Aether Dark v3 Wallpaper](https://www.itl.cat/pngfile/big/15-157194_free-download-computer-wallpaper-hd-for-desktop-park.jpg)
-
-```
-
-```
