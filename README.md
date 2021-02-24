@@ -132,7 +132,7 @@ git clone https://github.com/ilham25/dotfiles-installer && cd dotfiles-installer
   > **networkmanager_dmenu install**
 
   - ```bash
-    https://github.com/firecat53/networkmanager-dmenu.git && cd networkmanager-dmenu/
+    git clone https://github.com/firecat53/networkmanager-dmenu.git && cd networkmanager-dmenu/
     ```
 
   - ```bash
