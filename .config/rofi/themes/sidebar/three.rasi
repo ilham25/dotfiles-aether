@@ -7,7 +7,7 @@
   
   option-6-listview-spacing:            5px;
   menu-window-padding:                  5px 5px;
-  menu-element-padding:                 20px 25px 20px -9px;
+  menu-element-padding:                 20px 24px 19px 2px;
 }
 
 #window {
@@ -47,7 +47,7 @@
 }
 
 * {
-  font: @text-font;
+  font: @icon-font;
 }
 
 #window {
