@@ -63,12 +63,32 @@
 }
 
 .thunar .sidebar {
-  background-image:url("../gtk-assets/thunar-sidebar.png")
+  background-image: url("../gtk-assets/thunar-sidebar.png");
+  border: none;
 }
-
 
 .thunar .sidebar .view:not(:selected) {
   background-color: transparent;
+}
+
+.thunar .sidebar .view:selected {
+  border-radius: 15px 0px 0px 15px;
+}
+
+.thunar .sidebar .view {
+  padding: 3px 0px;
+}
+
+/* Remove left border */
+paned > separator {
+  min-width: 1px;
+  min-height: 1px;
+  -gtk-icon-source: none;
+  border-style: none;
+  background-color: transparent;
+  background-image: image(rgba(0, 0, 0, 0));
+  background-size: 1px 1px;
+  background-clip: content-box;
 }
 
 .thunar statusbar {

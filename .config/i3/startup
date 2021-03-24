@@ -9,7 +9,11 @@ aetherLight() {
     # GTK, rofi, color theme
     ~/.config/i3/theme/aether-light/aether-light-theme
     # Panel
-    tint2 -c ~/.config/tint2/aether-i3-light.tint2rc &
+    if [[ $PANELPOSITION == "TOP" ]]; then
+        tint2 -c ~/.config/tint2/aether-i3-light.tint2rc &
+    elif [[ $PANELPOSITION == "BOT" ]]; then
+        tint2 -c ~/.config/tint2/aether-i3-light-bot.tint2rc &
+    fi
     # Terminal Color Scheme
     xrdb ~/.config/i3/theme/aether-light/.Xresources
     # Screenshot frame color
@@ -25,7 +29,11 @@ aetherDark() {
     # GTK, rofi, color theme
     ~/.config/i3/theme/aether-dark/aether-dark-theme
     # Panel
-    tint2 -c ~/.config/tint2/aether-i3-dark.tint2rc &
+    if [[ $PANELPOSITION == "TOP" ]]; then
+        tint2 -c ~/.config/tint2/aether-i3-dark.tint2rc &
+    elif [[ $PANELPOSITION == "BOT" ]]; then
+        tint2 -c ~/.config/tint2/aether-i3-dark-bot.tint2rc &
+    fi
     # Terminal Color Scheme
     xrdb ~/.config/i3/theme/aether-dark/.Xresources
     # Screenshot frame color

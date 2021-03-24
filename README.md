@@ -7,9 +7,10 @@
 
 ## :art: Screenshot
 
-![screenshot](/Other/aether-light.png)
-![screenshot](/Other/aether-dark.png)
-![rightbtn](/Other/right-btn.png)
+|           Light Theme            |           Dark Theme            |
+| :------------------------------: | :-----------------------------: |
+| ![](/Other/aether-light-top.png) | ![](/Other/aether-dark-top.png) |
+| ![](/Other/aether-light-bot.png) | ![](/Other/aether-dark-bot.png) |
 
 ## :snowflake: My Setup :snowflake:
 
@@ -25,9 +26,9 @@
 
 - **Centralized Variable `.aether-corevar`**
 - New wallpaper
+- New panel (**Bottom and Top**)
 - New file manager sidebar
-- New notification icon
-- Change wallpaper using :large_blue_circle: blue circle in the panel
+- New file manager sidebar icons
 - Network interface auto-detect
 - Support for 1920x1080 screen resolution
 
@@ -296,5 +297,5 @@ Change the configuration below
 - [@duangdeong - Dotfiles Tester](https://github.com/duangdeong)
 - [@hikanna - Tester](https://gitlab.com/hikanna)
 - [ZorinOS theme](https://github.com/ZorinOS/zorin-desktop-themes)
-- [Aether Light v3 Wallpaper](https://wallpaperaccess.com/download/anime-scenery-3455)
-- [Aether Dark v3 Wallpaper](https://www.itl.cat/pngfile/big/15-157194_free-download-computer-wallpaper-hd-for-desktop-park.jpg)
+- [Aether Light v4 Wallpaper](https://wallpaperaccess.com/download/cute-pastel-anime-laptop-818292)
+- [Aether Dark v4 Wallpaper](https://anime.goodfon.com/other-anime/wallpaper-touhou-toukhou-tokho-anime-igra-devushka-krasnye-glaza.html)

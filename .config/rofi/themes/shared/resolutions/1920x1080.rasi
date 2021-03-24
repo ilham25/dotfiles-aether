@@ -15,6 +15,13 @@
   list-element-margin:                  @inputbar-margin;
   list-element-border:                  0px 8px 0px 8px;
   list-8-window-padding:                100px;
+  list-8-window-network-padding:        20px;
+  network-anchor-top:                   north;
+  network-anchor-bot:                   south;
+  network-x-offset-top:                 565px;
+  network-x-offset-bot:                 -565px;
+  network-y-offset-top:                 40px;
+  network-y-offset-bot:                 -50px;
   apps-textbox-prompt-colon-padding:    16px;
   network-textbox-prompt-colon-padding: 14px 10px 10px 10px;            
 }

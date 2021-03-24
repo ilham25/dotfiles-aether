@@ -9,6 +9,7 @@
 THEME="aetherDark"
 WALLPAPER="DEFAULT"
 SSFRAME="#21252B"
+PANELPOSITION="TOP"
 if [[ $THEME == "aetherDark" ]]; then ICONDIR="$HOME/.icons/aether/dark"; elif [[ $THEME == "aetherLight" ]]; then ICONDIR="$HOME/.icons/aether/light"; fi
 
 # ****************** #

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Load Global Variable
+source $HOME/.aether-corevar
+
+network_panel(){
+    sed -i '18s_anchor: @network-anchor-'"$1"'.*_anchor: @network-anchor-'"$2"';_' ~/.config/rofi/themes/networkmenu.rasi
+    sed -i '19s_location: @network-anchor-'"$1"'.*_location: @network-anchor-'"$2"';_' ~/.config/rofi/themes/networkmenu.rasi
+    sed -i '20s_x-offset: @network-x-offset-'"$1"'.*_x-offset: @network-x-offset-'"$2"';_' ~/.config/rofi/themes/networkmenu.rasi
+    sed -i '21s_y-offset: @network-y-offset-'"$1"'.*_y-offset: @network-y-offset-'"$2"';_' ~/.config/rofi/themes/networkmenu.rasi
+}
+
+if [[ $PANELPOSITION == "TOP" ]]; then
+    sed -i '12s_PANELPOSITION=.*_PANELPOSITION="BOT"_' ~/.aether-corevar
+    network_panel top bot
+elif [[ $PANELPOSITION == "BOT" ]]; then
+    sed -i '12s_PANELPOSITION=.*_PANELPOSITION="TOP"_' ~/.aether-corevar
+    network_panel bot top
+fi
+
+if [[ $THEME == "aetherLight" ]]; then
+    ~/.config/i3/change 1
+elif [[ $THEME == "aetherDark" ]]; then
+    ~/.config/i3/change 2
+fi

@@ -1,20 +1,25 @@
 /**
  * This theme is intended for a 8 items list menu with a headerbar.
  */
- 
+
 configuration {
   show-icons: false;
   columns: 1;
 }
 
-@import "shared/settings.rasi"
-* {
+@import "shared/settings.rasi" * {
   background-color: @background;
   text-color: @foreground-list;
   font: @text-font;
 }
 #window {
-  padding: @list-8-window-padding;
+  width: 40%;
+  height: 50%;
+  anchor: @network-anchor-bot;
+  location: @network-anchor-bot;
+  x-offset: @network-x-offset-bot;
+  y-offset: @network-y-offset-bot;
+  padding: @list-8-window-network-padding;
 }
 inputbar,
 prompt,
